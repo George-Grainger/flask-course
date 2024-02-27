@@ -1,6 +1,6 @@
 """Flask Application for Paws Rescue Center."""
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -9,17 +9,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Paws Rescue Center 🐾"
+    return render_template("home.html")
 
 
 @app.route("/about")
 def about():
-    return """
-    We are a non-profit organization working as an animal rescue center. 
-    We aim to help you connect with the purrfect furbaby for you! 
-    The animals you find at our website are rescue animals which have been rehabilitated. 
-    Our mission is to promote the ideology of "Adopt, don't Shop"!
-    """
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
