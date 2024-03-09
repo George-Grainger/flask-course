@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block h1 %}
+{{pet.name}}'s Details
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; gap: 1rem">
+
+    <img height="500" src="{{url_for('static', filename=pet.id|string + '.jpg')}}">
+    <div>
+        <h1>{{pet.name}}</h1>
+        <p><strong>Age: </strong>{{pet.age}}</p>
+        <p><strong>Bio: </strong>{{pet.bio}}</p>
+    </div>
+</div>
+{% endblock %}
