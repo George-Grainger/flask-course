@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<h1>Sign Up</h1>
+{% if message %}
+{{ message }}
+{% endif %}
+<form action="{{url_for('signup')}}" method="POST">
+    {{ form.full_name.label }}: <br>
+    {{ form.full_name }}
+    {% if 'full_name' in form.errors %}
+    <br>
+    <span class="error">{{", ".join(form.full_name.errors)}}</span>
+    {% endif %}
+    <br>
+    {{ form.email.label }}: <br>
+    {{ form.email }}
+    {% if 'email' in form.errors %}
+    <br>
+    <span class="error">{{", ".join(form.email.errors)}}</span>
+    {% endif %}
+    <br>
+    {{ form.password.label }}: <br>
+    {{ form.password }}
+    {% if 'password' in form.errors %}
+    <br>
+    <span class="error">{{", ".join(form.password.errors)}}</span>
+    {% endif %}
+    <br>
+    {{ form.confirm_password.label }}: <br>
+    {{ form.confirm_password }}
+    {% if 'confirm_password' in form.errors %}
+    <br>
+    <span class="error">{{", ".join(form.confirm_password.errors)}}</span>
+    {% endif %}
+    <br>
+    {{ form.csrf_token }}
+    {{ form.submit }}
+</form>
+{% endblock %}

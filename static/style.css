@@ -17,3 +17,20 @@ td {
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }
+
+nav ol {
+    display: flex;
+    gap: 2ch;
+    list-style-type: none;
+    padding: 0;
+}
+
+.error {
+    color: hsl(0, 100%, 40%);
+    font-weight: 700;
+}
+
+.success {
+    color: hsl(120, 100%, 40%);
+    font-weight: 700;
+}
