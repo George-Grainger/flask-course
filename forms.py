@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from flask_wtf.form import _Auto
+from wtforms import StringField, IntegerField, TextAreaField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Email, EqualTo
 
 
@@ -21,3 +22,10 @@ class SignUpForm(FlaskForm):
         ],
     )
     submit = SubmitField("Login")
+
+
+class PetForm(FlaskForm):
+    name = StringField("Name", validators=[InputRequired()])
+    age = StringField("Age", validators=[InputRequired()])
+    bio = TextAreaField("Bio", validators=[InputRequired()])
+    submit = SubmitField("Edit")
